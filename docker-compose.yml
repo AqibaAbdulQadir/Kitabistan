@@ -1,0 +1,68 @@
+services:
+  
+  user-service:
+    build: ./user-service
+    ports:
+      - "8001:8001"
+    volumes:
+      - user-data:/app/db
+    environment:
+      - DATABASE_PATH=/app/db/users.db
+      - EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
+
+  cart-service:
+    build: ./cart-service
+    ports:
+      - "8002:8002"
+    volumes:
+      - cart-data:/app/db
+    environment:
+      - DATABASE_PATH=/app/db/cart.db
+
+  order-service:
+    build: ./order-service
+    ports:
+      - "8003:8003"
+    volumes:
+      - order-data:/app/db
+    environment:
+      - DATABASE_PATH=/app/db/order.db
+      - PRODUCT_SERVICE_URL=http://product-service:8004
+  
+  product-service:
+    build: ./product-service
+    ports:
+      - "8004:8004"
+    volumes:
+      - product-data:/app/db
+    environment:
+      - DATABASE_PATH=/app/db/product.db
+  
+  payment-service:
+    build: ./payment-service
+    ports:
+      - "8005:8005"
+    volumes:
+      - payment-data:/app/db
+    environment:
+      - DATABASE_PATH=/app/db/payment.db
+      - ORDER_SERVICE_URL=http://order-service:8003
+      - PRODUCT_SERVICE_URL=http://product-service:8004
+  
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8000:8000"
+    depends_on:
+      - user-service
+      - cart-service
+      - order-service
+      - product-service
+      - payment-service
+
+volumes:
+  user-data:
+  cart-data:
+  order-data:
+  product-data:
+  payment-data:

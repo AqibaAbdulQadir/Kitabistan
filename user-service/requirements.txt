@@ -1,0 +1,8 @@
+django>=4.2,<5.0
+djangorestframework>=3.14,<4.0
+djangorestframework-simplejwt>=5.3,<6.0
+dj-rest-auth>=5.0,<6.0
+django-allauth>=0.57,<1.0
+psycopg2-binary>=2.9,<3.0
+cryptography>=41.0,<42.0
+requests>=2.31,<3.0

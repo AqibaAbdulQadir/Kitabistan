@@ -1,8 +1,9 @@
-node_modules/
-.venv/
-*.pyc
+# Python
+venv/
+product-service/venv/
 __pycache__/
-*.db
+*.pyc
 db.sqlite3
-.DS_Store
 .env
+# Node
+node_modules/

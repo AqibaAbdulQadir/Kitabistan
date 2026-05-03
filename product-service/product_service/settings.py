@@ -40,10 +40,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'products',
+    'corsheaders',
+
 ]
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -76,7 +79,7 @@ WSGI_APPLICATION = "product_service.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DB_ENGINE = os.environ.get('DB_ENGINE', 'sqlite')
+DB_ENGINE = 'sqlite'
 
 if DB_ENGINE == 'postgres':
     DATABASES = {
@@ -135,3 +138,12 @@ USE_TZ = True
 STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
+CORS_ALLOW_CREDENTIALS = True
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': None
+}

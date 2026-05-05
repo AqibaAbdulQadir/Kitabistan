@@ -9,27 +9,33 @@ export default function HomePage() {
     const [category, setCategory] = useState('');
     const [loading, setLoading] = useState(true);
 
-    // 🔥 ONLY RUN ONCE (NO FILTER DEPENDENCY)
+    // 🔥 Fetch when search or category changes
     useEffect(() => {
         fetchBooks();
+    }, [search, category]);
+
+    useEffect(() => {
         fetchCategories();
     }, []);
 
-    // 🔥 SIMPLE + RELIABLE FETCH (NO PAGINATION LOOP)
-   const fetchBooks = async () => {
-    try {
-        const res = await api.get('/books/'); // ✅ correct
+    const fetchBooks = async () => {
+        setLoading(true);
+        try {
+            let url = '/books/';
+            const params = [];
+            if (search) params.push(`search=${search}`);
+            if (category) params.push(`category=${category}`);
+            if (params.length) url += '?' + params.join('&');
 
-        console.log("TOTAL BOOKS:", res.data.length);
-
-        setBooks(res.data); // ✅ direct array
-
-    } catch (err) {
-        console.error(err);
-    } finally {
-        setLoading(false);
-    }
-};
+            const res = await api.get(url);
+            console.log("TOTAL BOOKS:", res.data.length);
+            setBooks(res.data);
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     const fetchCategories = async () => {
         try {
@@ -43,12 +49,10 @@ export default function HomePage() {
     const addToCart = async (book) => {
         try {
             const userId = localStorage.getItem('user_id');
-
             if (!userId) {
                 alert('Please login first');
                 return;
             }
-
             await api.post('/cart/add/', {
                 user_id: parseInt(userId),
                 product_id: book.id,
@@ -56,7 +60,6 @@ export default function HomePage() {
                 product_price: parseFloat(book.price),
                 quantity: 1,
             });
-
             alert(`${book.title} added to cart!`);
         } catch (err) {
             alert('Failed to add to cart');
@@ -67,10 +70,9 @@ export default function HomePage() {
 
     return (
         <div className="max-w-6xl mx-auto p-4">
-
             <h1 className="text-3xl font-bold mb-6">📚 Bookstore</h1>
 
-            {/* 🔍 UI ONLY (does NOT filter now) */}
+            {/* Search & Filter — working now */}
             <div className="flex gap-4 mb-6 flex-wrap">
                 <input
                     type="text"
@@ -79,7 +81,6 @@ export default function HomePage() {
                     onChange={(e) => setSearch(e.target.value)}
                     className="border rounded px-3 py-2 w-64"
                 />
-
                 <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
@@ -94,59 +95,27 @@ export default function HomePage() {
                 </select>
             </div>
 
-            {/* 📚 Book Count */}
-            <p className="mb-4 text-gray-600">
-                Showing {books.length} books
-            </p>
+            <p className="mb-4 text-gray-600">Showing {books.length} books</p>
 
-            {/* 📚 Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {books.map((book) => (
-                    <div
-                        key={book.id}
-                        className="border rounded-lg p-4 shadow hover:shadow-lg transition"
-                    >
-                        {/* 📸 Image */}
+                    <div key={book.id} className="border rounded-lg p-4 shadow hover:shadow-lg transition">
                         <img
-                            src={book.image_url || "https://via.placeholder.com/150"}
+                            src={book.image_url || book.image || "https://placehold.co/300x200?text=No+Cover"}
                             alt={book.title}
                             className="h-48 w-full object-cover mb-3 rounded"
                             onError={(e) => {
-                                e.target.src = "https://via.placeholder.com/150";
+                                e.target.src = "https://placehold.co/300x200?text=No+Cover";
                             }}
                         />
-
-                        {/* 📖 Info */}
                         <h2 className="text-xl font-semibold">{book.title}</h2>
                         <p className="text-gray-600">by {book.author}</p>
-
-                        {/* 📝 Description */}
-                        <p className="text-sm text-gray-500 line-clamp-2 mt-1">
-                            {book.description}
+                        <p className="text-sm text-gray-500 line-clamp-2 mt-1">{book.description}</p>
+                        <p className="text-lg font-bold mt-2">PKR {book.price}</p>
+                        <p className={`text-sm ${book.in_stock ? 'text-green-600' : 'text-red-600'}`}>
+                            {book.in_stock ? `${book.stock} in stock` : 'Out of stock'}
                         </p>
-
-                        {/* 💰 Price */}
-                        <p className="text-lg font-bold mt-2">
-                            PKR {book.price}
-                        </p>
-
-                        {/* 📦 Stock */}
-                        <p
-                            className={`text-sm ${
-                                book.in_stock ? 'text-green-600' : 'text-red-600'
-                            }`}
-                        >
-                            {book.in_stock
-                                ? `${book.stock} in stock`
-                                : 'Out of stock'}
-                        </p>
-
-                        {/* 🏷 Category */}
-                        <p className="text-sm text-gray-500">
-                            {book.category_name}
-                        </p>
-
-                        {/* 🛒 Button */}
+                        <p className="text-sm text-gray-500">{book.category_name}</p>
                         <button
                             onClick={() => addToCart(book)}
                             disabled={!book.in_stock}

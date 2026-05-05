@@ -30,3 +30,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id', 'email', 'name', 'role', 'date_joined']
         read_only_fields = ['id', 'email', 'date_joined']
+
+
+class GoogleLoginSerializer(serializers.Serializer):
+    access_token = serializers.CharField(required=True)

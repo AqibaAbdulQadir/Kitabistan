@@ -30,7 +30,7 @@ export default function App() {
     <BrowserRouter>
       <nav className="bg-gray-800 text-white p-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold">📚 Bookstore</Link>
+          <Link to="/" className="text-xl font-bold">📚 Kitabistan</Link>
           <div className="flex gap-4 items-center">
             <Link to="/cart" className="hover:text-gray-300">🛒 Cart</Link>
             {isLoggedIn ? (

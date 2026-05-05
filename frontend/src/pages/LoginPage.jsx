@@ -40,7 +40,8 @@ export default function LoginPage() {
             localStorage.setItem('user_name', res.data.user?.email);
             navigate('/');
         } catch (err) {
-            setError('Google login failed. Check backend configuration.');
+            // setError('Google login failed. Check backend configuration.');
+            setError(JSON.stringify(err.response.data));
         }
     };
 

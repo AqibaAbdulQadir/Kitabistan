@@ -70,7 +70,7 @@ export default function HomePage() {
 
     return (
         <div className="max-w-6xl mx-auto p-4">
-            <h1 className="text-3xl font-bold mb-6">📚 Bookstore</h1>
+            <h1 className="text-3xl font-bold mb-6">📚 Kitabistan</h1>
 
             {/* Search & Filter — working now */}
             <div className="flex gap-4 mb-6 flex-wrap">

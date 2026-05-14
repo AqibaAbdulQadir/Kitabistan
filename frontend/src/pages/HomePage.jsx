@@ -18,6 +18,9 @@ export default function HomePage() {
     const navigate = useNavigate();
     const isLoggedIn = localStorage.getItem('access_token');
     const userName = localStorage.getItem('user_name');
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+    const pageSize = 12;
 
     const handleSearchChange = (e) => {
         setSearchInput(e.target.value);
@@ -39,19 +42,28 @@ export default function HomePage() {
     const fetchBooks = async () => {
         setLoading(true);
         try {
-            let url = '/books/';
-            const params = [];
-            if (search) params.push(`search=${search}`);
-            if (category) params.push(`category=${category}`);
-            if (params.length) url += '?' + params.join('&');
+            let url = `/books/?page=${page}&page_size=${pageSize}`;
+            if (search) url += `&search=${search}`;
+            if (category) url += `&category=${category}`;
             const res = await api.get(url);
-            setBooks(res.data);
+
+            // DRF returns { count, next, previous, results }
+            setBooks(res.data.results || res.data);
+            setTotalPages(Math.ceil((res.data.count || res.data.length) / pageSize));
         } catch (err) {
             console.error(err);
         } finally {
             setLoading(false);
         }
     };
+
+    useEffect(() => {
+        setPage(1); // Reset to page 1 when search/category changes
+    }, [search, category]);
+
+    useEffect(() => {
+        fetchBooks();
+    }, [page, search, category]);
 
     const fetchCategories = async () => {
         try {
@@ -345,7 +357,42 @@ export default function HomePage() {
                         </motion.div>
                     )}
                 </AnimatePresence>
+
+                {/* Pagination */}
+                {totalPages > 1 && (
+                    <div className="flex justify-center items-center gap-4 mt-8">
+                        <button
+                            onClick={() => setPage(p => Math.max(1, p - 1))}
+                            disabled={page === 1}
+                            className="px-4 py-2 bg-white rounded-xl shadow hover:shadow-md disabled:opacity-40 disabled:cursor-not-allowed transition"
+                        >
+                            ← Previous
+                        </button>
+                        <div className="flex gap-2">
+                            {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
+                                <button
+                                    key={p}
+                                    onClick={() => setPage(p)}
+                                    className={`w-10 h-10 rounded-xl font-medium transition ${page === p
+                                        ? 'bg-purple-600 text-white'
+                                        : 'bg-white shadow hover:shadow-md'
+                                        }`}
+                                >
+                                    {p}
+                                </button>
+                            ))}
+                        </div>
+                        <button
+                            onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                            disabled={page === totalPages}
+                            className="px-4 py-2 bg-white rounded-xl shadow hover:shadow-md disabled:opacity-40 disabled:cursor-not-allowed transition"
+                        >
+                            Next →
+                        </button>
+                    </div>
+                )}
             </div>
+
 
             {/* Footer */}
             <footer className="bg-slate-900 text-white py-12">

@@ -5,7 +5,12 @@ from rest_framework.filters import SearchFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Book, Category
 from .serializers import BookSerializer, CategorySerializer, StockUpdateSerializer
+from rest_framework.pagination import PageNumberPagination
 
+class BookPagination(PageNumberPagination):
+    page_size = 12
+    page_size_query_param = 'page_size'
+    max_page_size = 50
 
 # -------------------------------
 # Category ViewSet
@@ -24,6 +29,7 @@ class BookViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['category']
     search_fields = ['title', 'author']
+    pagination_class = BookPagination   # ← Add this line
 
     # -------------------------------
     # Reduce Stock

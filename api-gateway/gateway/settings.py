@@ -25,8 +25,6 @@ SECRET_KEY = "django-insecure-9&6!7oe5i3(4+gkvtp^*-^b28lhgshg-bxs1jb#28jdul1$p0^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -41,8 +39,7 @@ INSTALLED_APPS = [
     'router',
 ]
 
-DEBUG = True
-ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', '.railway.app', '.onrender.com', '.vercel.app']
 
 # Disable CSRF for gateway (services handle their own)
 MIDDLEWARE = [

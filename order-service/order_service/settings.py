@@ -26,7 +26,6 @@ SECRET_KEY = "django-insecure-s-&f0%wput4x@%8nuzh97#og_-*%&u1vvu3ozcpyvm69c#uh#y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -140,5 +139,4 @@ STATIC_URL = "static/"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', '.railway.app', '.onrender.com', '.vercel.app']

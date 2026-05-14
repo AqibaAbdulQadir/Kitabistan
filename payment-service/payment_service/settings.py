@@ -26,9 +26,6 @@ SECRET_KEY = "django-insecure-6#3s5u-$4ox2xqs!1-j-cmw4j*n5ka1&#5_$8@h_$yo(-y9uu9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,7 +41,7 @@ INSTALLED_APPS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEBUG = True
-ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', '.railway.app', '.onrender.com', '.vercel.app']
 
 
 

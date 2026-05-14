@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: kitabistan-cart
+    rootDir: cart-service
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python manage.py makemigrations cart && python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT
+    envVars:
+      - key: DATABASE_PATH
+        value: /var/data/db.sqlite3
+      - key: PORT
+        value: "8000"
+
+  - type: web
+    name: kitabistan-product
+    rootDir: product-service
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python manage.py makemigrations products && python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT
+    envVars:
+      - key: DATABASE_PATH
+        value: /var/data/db.sqlite3
+      - key: PORT
+        value: "8000"
+
+  - type: web
+    name: kitabistan-order
+    rootDir: order-service
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python manage.py makemigrations orders && python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT
+    envVars:
+      - key: DATABASE_PATH
+        value: /var/data/db.sqlite3
+      - key: PORT
+        value: "8000"
+
+  - type: web
+    name: kitabistan-payment
+    rootDir: payment-service
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python manage.py makemigrations payments && python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT
+    envVars:
+      - key: DATABASE_PATH
+        value: /var/data/db.sqlite3
+      - key: PORT
+        value: "8000"

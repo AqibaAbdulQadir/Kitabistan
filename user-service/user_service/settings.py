@@ -227,4 +227,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST_USER = 'your-email@gmail.com'
 # EMAIL_HOST_PASSWORD = 'your-app-password'
 
-ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', 'user-service']
+ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', '.railway.app', '.onrender.com', '.vercel.app']

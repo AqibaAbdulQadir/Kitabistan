@@ -147,3 +147,10 @@ CORS_ALLOW_CREDENTIALS = True
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': None
 }
+CSRF_TRUSTED_ORIGINS = [
+    'https://kitabistan.up.railway.app',
+    'https://kitabistan-user.up.railway.app',
+    'https://*.railway.app',
+    'https://*.onrender.com',
+    'https://*.vercel.app',
+]

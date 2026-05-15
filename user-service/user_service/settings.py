@@ -65,6 +65,14 @@ MIDDLEWARE = [
 ]
 ROOT_URLCONF = "user_service.urls"
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://kitabistan.up.railway.app',
+    'https://kitabistan-user.up.railway.app',
+    'https://*.railway.app',
+    'https://*.onrender.com',
+    'https://*.vercel.app',
+]
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",

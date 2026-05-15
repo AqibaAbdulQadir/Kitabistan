@@ -138,3 +138,11 @@ STATIC_URL = "static/"
 
 # DEBUG = False
 ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', '.railway.app', '.onrender.com', '.vercel.app']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://kitabistan.up.railway.app',
+    'https://kitabistan-user.up.railway.app',
+    'https://*.railway.app',
+    'https://*.onrender.com',
+    'https://*.vercel.app',
+]

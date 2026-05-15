@@ -7,5 +7,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+# Create db directory
+RUN mkdir -p /app/db
+
 EXPOSE 8004
 CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8004"]

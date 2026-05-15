@@ -3,17 +3,17 @@ from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import requests
-
+import os
 
 @method_decorator(csrf_exempt, name='dispatch')
 class GatewayView(View):
     SERVICE_URLS = {
-        'auth': 'http://user-service:8001',
-        'cart': 'http://cart-service:8002',
-        'orders': 'http://order-service:8003',
-        'books': 'http://product-service:8004',
-        'categories': 'http://product-service:8004',
-        'payments': 'http://payment-service:8005',
+        'auth': os.environ.get('USER_SERVICE_URL', 'http://user-service:8001'),
+        'cart': os.environ.get('CART_SERVICE_URL', 'http://cart-service:8002'),
+        'orders': os.environ.get('ORDER_SERVICE_URL', 'http://order-service:8003'),
+        'books': os.environ.get('PRODUCT_SERVICE_URL', 'http://product-service:8004'),
+        'categories': os.environ.get('PRODUCT_SERVICE_URL', 'http://product-service:8004'),
+        'payments': os.environ.get('PAYMENT_SERVICE_URL', 'http://payment-service:8005'),
     }
 
     def _cors(self, response):

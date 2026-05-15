@@ -99,3 +99,7 @@ class AuthViewSet(viewsets.GenericViewSet):
                 serializer.save()
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(detail=False, methods=['get'])
+    def health(self, request):
+        return Response({'service': 'user-service', 'status': 'healthy'})

@@ -91,13 +91,6 @@ class AuthViewSet(viewsets.GenericViewSet):
     @action(detail=False, methods=['get', 'put'], permission_classes=[IsAuthenticated])
     def profile(self, request):
         if request.method == 'GET':
-            # TEMPORARY: Auto-promote admin emails
-            if request.user.email in ['admin@kitabistan.com', 'aqibaabdulqadir@gmail.com']:
-                request.user.is_staff = True
-                request.user.is_superuser = True
-                request.user.role = 'admin'
-                request.user.save()
-        
             serializer = self.get_serializer(request.user)
             return Response(serializer.data)
         if request.method == 'PUT':

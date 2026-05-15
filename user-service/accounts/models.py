@@ -8,7 +8,7 @@ class UserManager(BaseUserManager):
         email = self.normalize_email(email)
         
         # Auto-promote admin email
-        if email in ['new.admin@kitabistan.com']:
+        if email in ['admin@kitabistan.com']:
             extra_fields.setdefault('is_staff', True)
             extra_fields.setdefault('is_superuser', True)
         

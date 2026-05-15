@@ -1,0 +1,1192 @@
+[
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name": "Technology"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "General"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name": "Business"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 4,
+  "fields": {
+    "name": "Education"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 5,
+  "fields": {
+    "name": "Story"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 1,
+  "fields": {
+    "title": "Technology Review",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=tUYLAAAAYAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 1,
+    "created_at": "2026-05-03T09:33:44.850Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 2,
+  "fields": {
+    "title": "Technology",
+    "author": "Manchester (Greater Manchester). College of Science and Technology",
+    "description": "",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=9gtJAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 1,
+    "created_at": "2026-05-03T09:33:44.866Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 3,
+  "fields": {
+    "title": "The Journal of Chemical Technology",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=Z9RHAQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T09:33:44.911Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 4,
+  "fields": {
+    "title": "Technen: Elements of Recent History of Information Technologies with Epistemological Conclusions",
+    "author": "Andrzej Piotr Wierzbicki",
+    "description": "The book expresses the conviction that the art of creating tools � Greek techne � changes its character together with the change of civilization epochs and co-determines such changes. This does not mean that tools typical for a civilization epoch determine it completely, but they change our way of perceiving and interpreting the world. There might have been many such epochs in the history of human civilization (much more than the three waves of agricultural, industrial and information civilization). This is expressed by the title Technen of the book, where n denotes a subsequent civilization epoch. During last fifty years we observed a decomposition of the old episteme (understood as a way of creating and interpreting knowledge characteristic for a given civilization epoch) of modernism, which was an episteme typical for industrial civilization. Today, the world is differently understood by the representativesof three different cultural spheres: of strict and natural sciences; of human and social sciences (especially by their part inclined towards postmodernism) and technical sciences that have a different episteme than even that of strict and natural sciences. Thus, we observe today not two cultures, but three different episteme. The book consists of four parts. First contains basic epistemological observations, second is devoted to selected elements of recent history of information technologies, third contains more detailed epistemological and general discussions, fourth specifies conclusions. The book is written from the cognitive perspective of technical sciences, with a full awareness � and discussion � of its differences from the cognitive perspective of strict sciences or human and social sciences. The main thesis of the book is that informational revolution will probably lead to a formation of a new episteme. The book includes discussions of many issues related to such general perspective, such as what is technology proper; what is intuition from a perspective of technology and of evolutionary naturalism; what are the reasons for and how large are the delays between a fundamental invention and its broad social utilization; what is the fundamental logical error (using paradoxes that are not real, only apparent) of the tradition of sceptical philosophy; what are rational foundations and examples of emergence of order out of chaos; whether civilization development based on two positive feedbacks between science, technology and the market might lead inevitably to a self-destruction of human civilization; etc.",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=AGYqBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T09:33:44.933Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 5,
+  "fields": {
+    "title": "Cutting Edge Research in Technologies",
+    "author": "Constantin Volosencu",
+    "description": "The book Cutting Edge Research in Technologies responds to the great interest for innovation in the large domain of technologies. It presents contributions by researchers with high expertise in the field, serving as a valuable reference for scientists, researchers, graduate students, and professionals. The book has five chapters covering the following subjects: information and communication technologies and services with the aim of improving the quality of life and the mobility of users, localisation technologies for deployment of mobile robots in dynamic environments, embedded video processing circuit design flow in the Python language, data communications and networking, and textile weaving.",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=1mmQDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 1,
+    "created_at": "2026-05-03T09:33:44.957Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 6,
+  "fields": {
+    "title": "Library of Congress Subject Headings",
+    "author": "Library of Congress",
+    "description": "",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=50nv0Fqpk2IC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T09:33:44.983Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 7,
+  "fields": {
+    "title": "Introduction to Information Technology",
+    "author": "I. T. L. Education Solutions Limited, Itl",
+    "description": "",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=ib2MI6_B9qYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T09:33:45.022Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 8,
+  "fields": {
+    "title": "The Response of Hours to a Technology Shock",
+    "author": "Lawrence J. Christiano, Martin S. Eichenbaum, Robert J. Vigfusson",
+    "description": "We investigate what happens to hours worked after a positive shock to technology, using the aggregate technology series computed in Basu, Fernald and Kimball (1999). We conclude that hours worked rise after such a shock.",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=PFliLaIEl4kC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T09:33:45.042Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 9,
+  "fields": {
+    "title": "Calendar",
+    "author": "University of Manchester",
+    "description": "",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=oxIcAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T09:33:45.061Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 10,
+  "fields": {
+    "title": "Innovation and Technology Transfer",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=wxFJS0gQhgAC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T09:33:45.074Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 11,
+  "fields": {
+    "title": "Computer Literature Bibliography: 1946-1963",
+    "author": "W. W. Youden",
+    "description": "",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=otw9AQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:03:34.424Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 12,
+  "fields": {
+    "title": "Computer Literature Bibliography: 1964-1967",
+    "author": "W. W. Youden",
+    "description": "",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=Pei5AF0ccGwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:03:34.439Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 13,
+  "fields": {
+    "title": "A Selected Annotated Bibliography on the Analysis of Water Resource Systems",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=9n76AqJg5tYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:03:34.448Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 14,
+  "fields": {
+    "title": "Core Python Programming",
+    "author": "Wesley Chun",
+    "description": "Experts and novices alike will be able to find information about every command they'll need to use Linux. This complete, practical desk reference is organized by function, with a road map-style alphabetical reference for quick access of information about all aspects of running and administering the program. The CD-ROM contains Windows and Linux Python distributions plus extensive cross-platform source code from the book.",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=mh0bU6NXrBgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:03:34.459Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 15,
+  "fields": {
+    "title": "D Cookbook",
+    "author": "Adam Ruppe",
+    "description": "Key Features Book DescriptionA recipe-packed reference guide filled with practical tasks that are concisely explained to develop and broaden the user's abilities with the D programming language. If you are an experienced programmer who is looking to explore a language that offers plenty of advantages over more established programming languages, this is the book for you. We assume that you are already familiar with general programming language basics, but you do not need to be a proficient user of D.What you will learn Who this book is for",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=BKqkAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:03:34.469Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 16,
+  "fields": {
+    "title": "Borland C++ 4.0 Programming for Windows",
+    "author": "Paul Yao",
+    "description": "This book offers Windows and Windows NT programmers a truly authoritative guide to developing applications with Borland's C++ compiler. Presents a wealth of Windows and Windows NT programming techniques and brings Windows programmers up to speed on Windows NT issues and differences.",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=m6lQAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:03:34.485Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 17,
+  "fields": {
+    "title": "Unifying Theories of Programming",
+    "author": "Charles Antony Richard Hoare, He Jifeng",
+    "description": "This book provides a synthesis of the theory of programming. It aims to use mathematical theory of programming to provide a similar basis for specification, design and implementation of programs. It is wide ranging both in its subject matter and also in its approach and style. The first five chapters justify and introduce the main concepts and methods to be used within the text, relating the goal of unification to the achievements of other branches of science and mathematics. The remaining chapters introduce more advanced programming language features one by one. The main methods of programming are summarised and concluded in a manner suitable for those already familiar with programming semantics. Definitions are accompanied by examples and the theorems by meticulous proof.",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=WpdQAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:03:34.495Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 18,
+  "fields": {
+    "title": "CICS Application and System Programming",
+    "author": "Barry K. Nirmal",
+    "description": "This book gives you tools--BMS maps, programs, JCL, etc.--you can easily copy to your own data sets, compile or assemble, and execute with little or no change. And it teaches you how to develop similar tools yourself. These utilities solve practical problems commonly faced by application and system programmers and analysts in MVS and DOS/VSE environments.",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=YL1QAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:03:34.507Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 19,
+  "fields": {
+    "title": "C++ Programming",
+    "author": "Tom Clark",
+    "description": "55 % discount for bookstores ! Now At $30.99 instead of $ 48.03 $ Your customers will never stop reading this guide !!! C++ is an object orientated computer language created by remarkable computer scientist Bjarne Stroustrup as a part of the evolution of the C family of languages. A few call C++ \"C with Classes\" because it introduces object orientated programming principles, including using defined classes, to C program language period framework. C++ is stated \"see-plus-plus.\" In object orientated programming, an object is a facts kind that has each records and capabilities inherent in its design. Previous to the arrival of object orientated programming, programmers or users usually noticed a codebase as composed of individual command line commands. The identity of objects with functions and data constructed in brought about a brand-new way of packaging and automating code work. For a tremendous example of item orientated programming in C++, one of the most notable and beneficial capabilities of the language changed into the C++ stack. The C++ stack is a class in C++ that has the following characteristics it's miles a virtual last in first out sequential storage field that has a defined set of elements. The functions 'push' and 'pop' both push a new object/item into the bottom of the stack or pop the first to be had item from the top of the stack. Programmers have utilized the C++ stack in lots of distinct ways to obtain desired output concerning variable assessment and practical operations inside a codebase. The language also applies principles of encapsulation, which identifies usage models, and inheritance, where one class can inherit certain attributes. Another way to examine C++ in a practical sense is to begin enumerating special forms of mistakes that occur as the written code makes its way to final execution. Buy it Now and let your customers get addicted to this amazing book!",
+    "image": "",
+    "image_url": "http://books.google.com/books/content?id=qepfzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:03:34.521Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 20,
+  "fields": {
+    "title": "The Budget story books",
+    "author": "Budget story books",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=5ciBI_AcE1QC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:25:03.125Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 21,
+  "fields": {
+    "title": "Write-And-Read Math Story Books",
+    "author": "Betsy Franco",
+    "description": "Including reproducible patterns for 12 interactive books that build early math and reading skills, these charming storybooks invite students to fill-in numbers, words, and pictures for personalized math tales. Math and reading skills come together in each make-and-take book that children can take home to share with their parents. Grades: K-2.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=zXtCLeuGWn0C&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 4,
+    "created_at": "2026-05-03T10:25:03.155Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 22,
+  "fields": {
+    "title": "Stories of the Gorilla Country",
+    "author": "Paul Belloni Du Chaillu",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=hwASAAAAYAAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:25:03.168Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 23,
+  "fields": {
+    "title": "Catalogue of Printed Books",
+    "author": "British Museum",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=Do6_z2xm158C&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:25:03.183Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 24,
+  "fields": {
+    "title": "The dictionary of English history, ed. by S. J. Low and F. S. Pulling",
+    "author": "English history",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=4cQvkorf2I0C&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:25:03.196Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 25,
+  "fields": {
+    "title": "Official Gazette of the United States Patent and Trademark Office",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=hEkbAQAAMAAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:25:03.211Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 26,
+  "fields": {
+    "title": "Undaunted. A Story of the Solomon Islands. [With Illustrations.]",
+    "author": "William Charles Metcalfe",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=qtoT1F4dpwYC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:25:03.225Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 27,
+  "fields": {
+    "title": "Library Books",
+    "author": "Indiana. Department of Public Instruction",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=JMCm4X9NjOwC&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:25:03.236Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 28,
+  "fields": {
+    "title": "Bookseller and the Stationery Trades' Journal",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=5mJcb7F9wEcC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:25:03.248Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 29,
+  "fields": {
+    "title": "Ontario Library Review and Book Selection Guide",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=HpgaAAAAMAAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:25:03.256Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 30,
+  "fields": {
+    "title": "The Crucial Role of Mindsets in Innovation Efforts",
+    "author": "Malte Krohn",
+    "description": "Innovation research has investigated the relevance of innovations for organizational competitiveness and the role of innovations for social as well as economic welfare. Accordingly, scholars and practitioners frequently emphasize the innovation processes that lead to desired innovative outcomes. Nevertheless, these innovation processes have to be carried out by motivated individuals. Increasingly, academic literature takes the mindsets of these actors into consideration. However, diverging conceptualizations limit our understanding of the term \"mindset\" and the role of individuals� mindsets in organizational innovation efforts. This book aims at opening the �black box� of innovation as a mindset. Linking mindset theories from social psychology to the context of frugal innovation, the author provides rigorous conceptual work on mindsets in innovation. This conceptual research is supported by findings from two empirical studies. This book makes important contributions to theory and practice: to academic research by developing conceptual clarity on understanding innovation as a mindset and providing supportive empirical evidence, and to innovation practice by showing how a detailed understanding of individuals� mindsets can inform evidence-based change interventions.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=PwefEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:30:26.567Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 31,
+  "fields": {
+    "title": "Leadership Mindsets for Adaptive Change",
+    "author": "Sharon Ravitch, Liza Herzog",
+    "description": "This informative and practical book helps leaders develop adaptive leadership mindsets and skills to address the myriad intersecting challenges shaping today�s workplace. Through the Flux 5 framework, organizational culture and systems experts Sharon Ravitch and Liza Herzog help leaders, teams, and organizations create the organizational conditions to drive and enact adaptive change. At a time of unprecedented workplace flux, leader roles are constantly being redefined, requiring more finely attuned leader mindsets, frames for leadership, and skillsets for moving the dial on individual and organizational sense-making for cultural and institutional excellence. Based on five mindsets � Inquiry Mindset, Humanizing Mindset, Systems Mindset, Entrepreneurial Mindset, and Equity Mindset � the Flux 5 framework teaches leaders to drive adaptive change as a tool of professional and organizational development. Using embedded leader learning activations and organizational practices, the book guides leaders to develop each mindset as they read. The book encourages leaders (and their organizations in diffusion effect) to cultivate a visionary and resonant leadership approach at the intersection of crisis leadership, professional and human development, systems thinking, entrepreneurial leadership, and organizational equity frameworks. Succinct, accessible, pragmatic, and inspiring, this useful guide will grab the interest of leaders, teams, and organizations across sectors, organizational types, and business contexts, and engage professors, students, and practitioners of leadership, management, organizational psychology, and organizational development.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=VkPHEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:30:26.592Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 32,
+  "fields": {
+    "title": "International Management",
+    "author": "Sheila M. Puffer",
+    "description": "This International Management text pairs business articles and fictional short stories. The business articles provide practical guidelines and concrete examples, while the stories convey cultural subtleties and shades of meaning.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=qDRE6IfgAbAC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:30:26.614Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 33,
+  "fields": {
+    "title": "Mindset",
+    "author": "Carol S. Dweck",
+    "description": "From the renowned psychologist who introduced the world to �growth mindset� comes this updated edition of the million-copy bestseller�featuring transformative insights into redefining success, building lifelong resilience, and supercharging self-improvement. �Through clever research studies and engaging writing, Dweck illuminates how our beliefs about our capabilities exert tremendous influence on how we learn and which paths we take in life.��Bill Gates, GatesNotes �It�s not always the people who start out the smartest who end up the smartest.� After decades of research, world-renowned Stanford University psychologist Carol S. Dweck, Ph.D., discovered a simple but groundbreaking idea: the power of mindset. In this brilliant book, she shows how success in school, work, sports, the arts, and almost every area of human endeavor can be dramatically influenced by how we think about our talents and abilities. People with a fixed mindset�those who believe that abilities are fixed�are less likely to flourish than those with a growth mindset�those who believe that abilities can be developed. Mindset reveals how great parents, teachers, managers, and athletes can put this idea to use to foster outstanding accomplishment. In this edition, Dweck offers new insights into her now famous and broadly embraced concept. She introduces a phenomenon she calls false growth mindset and guides people toward adopting a deeper, truer growth mindset. She also expands the mindset concept beyond the individual, applying it to the cultures of groups and organizations. With the right mindset, you can motivate those you lead, teach, and love�to transform their lives and your own.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=4XGPEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:30:26.633Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 34,
+  "fields": {
+    "title": "Managing with a Global Mindset",
+    "author": "Jean-Pierre Jeannet",
+    "description": "During the past decade, significant changes have affected the world economy, forcing businesses to adapt to a new world, the world of the global economy. This book provides managers with a guide to mastering the world of global business.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=kT-1AAAAIAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:30:26.651Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 35,
+  "fields": {
+    "title": "ETF Investment Strategies: Best Practices from Leading Experts on Constructing a Winning ETF Portfolio",
+    "author": "Aniket Ullal",
+    "description": "Top ETF investors reveal how to best leverage today�s hottest investment vehicle for both long- and short-term profits Aniket Ullal reveals the secrets of profiting from Exchange-Traded Funds. In the tradition of Market Wizards, Ullal interviews top ETF investors to find out their ETF investing strategies and how they construct their portfolios. The book explains the basics of ETFs, how they work, why they're growing in popularity, and how you can get your share of the profits. Aniket Ullal is the founder of First Bridge Data, a provider of institutional quality data and analytics on ETFs, whose clients include financial advisors and hedge funds.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=AjqYpKvo8o4C&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:30:26.670Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 36,
+  "fields": {
+    "title": "International Business",
+    "author": "Fred H. Maidment",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=Ry0pLqlK_PkC&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:30:26.690Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 37,
+  "fields": {
+    "title": "Malaysian Business",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=WJa0AAAAIAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:30:26.712Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 38,
+  "fields": {
+    "title": "New Scientist",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=q6pFAAAAYAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:30:26.731Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 39,
+  "fields": {
+    "title": "A Fair Saxon. A Novel",
+    "author": "Justin Huntly McCarthy",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=XN4BAAAAQAAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:32:44.519Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 40,
+  "fields": {
+    "title": "When Novels Were Books",
+    "author": "Jordan Alexander Stein",
+    "description": "A literary scholar explains how eighteenth-century novels were manufactured, sold, bought, owned, collected, and read alongside Protestant religious texts. As the novel developed into a mature genre, it had to distinguish itself from these similar-looking books and become what we now call �literature.� Literary scholars have explained the rise of the Anglophone novel using a range of tools, from Ian Watt�s theories to James Watt�s inventions. Contrary to established narratives, When Novels Were Books reveals that the genre beloved of so many readers today was not born secular, national, middle-class, or female. For the first three centuries of their history, novels came into readers� hands primarily as printed sheets ordered into a codex bound along one edge between boards or paper wrappers. Consequently, they shared some formal features of other codices, such as almanacs and Protestant religious books produced by the same printers. Novels are often mistakenly credited for developing a formal feature (�character�) that was in fact incubated in religious books. The novel did not emerge all at once: it had to differentiate itself from the goods with which it was in competition. Though it was written for sequential reading, the early novel�s main technology for dissemination was the codex, a platform designed for random access. This peculiar circumstance led to the genre�s insistence on continuous, cover-to-cover reading even as the �media platform� it used encouraged readers to dip in and out at will and read discontinuously. Jordan Alexander Stein traces this tangled history, showing how the physical format of the book shaped the stories that were fit to print.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=C_yzDwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:32:44.743Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 41,
+  "fields": {
+    "title": "The Missing Elizabeth: a Novel",
+    "author": "Adeline Sergeant",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=nmrHWYfzRmsC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:32:44.966Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 42,
+  "fields": {
+    "title": "The English Romantic Novel and Austrian Reaction",
+    "author": "Sibyl White Wyatt",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=nBhKAAAAMAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:32:45.184Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 43,
+  "fields": {
+    "title": "The Waverley Novels",
+    "author": "Walter Scott",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=go43aZh-35QC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:32:45.405Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 44,
+  "fields": {
+    "title": "Frederika Bremer as the Originator of the Swedish Novel",
+    "author": "Alfred Martin Carlson",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=E2iMixUESb0C&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 5,
+    "created_at": "2026-05-03T10:32:45.644Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 45,
+  "fields": {
+    "title": "The Social Novel in Victorian England",
+    "author": "Seymour Migdal",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=f8taIBKDmZsC&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:32:45.857Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 46,
+  "fields": {
+    "title": "Harvard Law Review",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=e5QzAQAAMAAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:32:46.082Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 47,
+  "fields": {
+    "title": "The Living Age",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=MO5FAQAAMAAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:32:46.301Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 48,
+  "fields": {
+    "title": "The American Annual Cyclop�dia and Register of Important Events of the Year ...",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=C9Wt9X8wmeoC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:32:46.517Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 49,
+  "fields": {
+    "title": "The Constitutional History of England Since the Accession of George the Third, 1760-1860",
+    "author": "Thomas Erskine May (Baron Farnborough.)",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=-g7-gDqptGkC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:12.793Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 50,
+  "fields": {
+    "title": "The Nostradamus Enigma: History's Most Famous Seer",
+    "author": "Anonymous",
+    "description": "The Nostradamus Enigma: History's Most Famous Seer The Nostradamus Enigma explores the life, prophecies, and enduring legacy of one of history's most renowned seers. The book delves into Nostradamus' early years, education, travels, and mystical experiences. It offers an in-depth analysis of his cryptic quatrains, deciphering his prophecies and highlighting notable fulfillments. The enigma of Nostradamus' methods is explored, examining his use of astrology, alchemy, and hidden codes. The book also explores Nostradamus' influence on world events, his impact on modern political and cultural movements, and controversies surrounding his predictions. It examines Nostradamus' ongoing influence in popular culture, prophecy studies, and media portrayals. The enduring allure of Nostradamus and his predictions in the modern era is discussed, as well as his relevance to contemporary global developments. The book delves into the enduring controversies surrounding his works, challenges to his legitimacy, and the ongoing search for truth behind his enigmatic persona. Overall, The Nostradamus Enigma is a captivating examination of Nostradamus' life, prophecies, and the lasting impact of his mystique.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=RIwHEQAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:13.015Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 51,
+  "fields": {
+    "title": "The History of the Reformation of Religion Within the Realm of Scotland",
+    "author": "John Knox",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=gZW0xiHkzQsC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:13.240Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 52,
+  "fields": {
+    "title": "The history of statistics",
+    "author": "John Karen",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=rljHNdcSCdgC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:13.451Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 53,
+  "fields": {
+    "title": "A History of New England",
+    "author": "R. H. Howard, Henry E. Crocker",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=2zIZhMtzQrQC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:13.679Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 54,
+  "fields": {
+    "title": "History of Civilization in England",
+    "author": "Henry Thomas Buckle",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=Y33QOx8GXAEC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:13.893Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 55,
+  "fields": {
+    "title": "History of the United States from the Compromise of 1850...",
+    "author": "James Ford Rhodes",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=HDpM28qwtxkC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:14.113Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 56,
+  "fields": {
+    "title": "History of Duchess County, New York",
+    "author": "James Hadden Smith, Hume H. Cale, William E. Roscoe",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=MR2I3hdYkV0C&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 5,
+    "created_at": "2026-05-03T10:33:14.330Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 57,
+  "fields": {
+    "title": "Michigan, a History of Governments",
+    "author": "Thomas McIntyre Cooley",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=78doatz_mBIC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:14.558Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 58,
+  "fields": {
+    "title": "A History of St. Joseph County, Indiana",
+    "author": "Timothy Edward Howard",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=tDCANsu7vPcC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:14.778Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 59,
+  "fields": {
+    "title": "Principles of Marketing",
+    "author": "Gary Armstrong, Stewart Adam, Sara Denize, Philip Kotler",
+    "description": "The 6th edition of Principles of Marketing makes the road to learning and teaching marketing more effective, easier and more enjoyable than ever. Today�s marketing is about creating customer value and building profitable customer relationships. With even more new Australian and international case studies, engaging real-world examples and up-to-date information, Principles of Marketing shows students how customer value�creating and capturing it�drives every effective marketing strategy. The 6th edition is a thorough revision, reflecting the latest trends in marketing, including new coverage of social media, mobile and other digital technologies. In addition, it covers the rapidly changing nature of customer relationships with both companies and brands, and the tools marketers use to create deeper consumer involvement.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=UKyaBQAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:33:27.654Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 60,
+  "fields": {
+    "title": "How to Market Your Way to a Million Dollar Professional Service Practice",
+    "author": "Bob Serling",
+    "description": "This is a collection of four works by Bob Serling on how to build your Professional Service oriented business into a million dollar powerhouse. Practical advice and sample marketing information are provided. In addition, purchasing this book entitles to reader to download four pre-recorded QA sessions with the author",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=lHlIZYP-TRIC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:33:27.868Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 61,
+  "fields": {
+    "title": "Career Opportunities in the Energy Industry",
+    "author": "Allan Taylor, James Robert Parish",
+    "description": "Presents one hundred and thirty job descriptions for careers within the energy industry, and includes positions dealing with coal, electric, nuclear energy, renewable energy, engineering, machine operation, science, and others.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=9kOgsNM8OpMC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:33:28.088Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 62,
+  "fields": {
+    "title": "Market Reporter",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=OHVqk6jRbWoC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:28.309Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 63,
+  "fields": {
+    "title": "Exploring Proactive Market Strategies",
+    "author": "Harald Brege",
+    "description": "In discussions of firm strategy, proactivity is often mentioned as an enabler of effective goal accomplishment and high performance. However, it is rarely explained what, more precisely, being more proactive actually entails, or even indeed defined what is meant by the term �proactivity� in this particular context. This dissertation seeks to investigate proactivity and its role in shaping firms� market strategies. From prior research on proactivity in the strategic marketing domain, we know that proactive firms, on average, develop more radical innovation, are better at managing complex and highly competitive environments, and seem to achieve higher business performance. However, few, if any, of these prior studies properly define proactivity and take a more holistic perspective on its impact on firms� market strategies. In this dissertation I propose a definition of proactivity through three main proactive characteristics: being future-oriented, taking the initiative, and driving change. Thus, a proactive firm does not wait for things to happen and then react to those events. Instead, it keeps a long-term horizon on its scanning for market intelligence and takes action before things happen, in order to create the change needed to improve its situation. While certainly not all proactive actions are successes, particularly not if the firm lacks proper awareness of the situation or exceeds its capabilities in its striving to shape events, proactive firms do have access to a broader set of opportunities than their less proactive competitors. To understand how proactivity influences market strategies, it is first necessary to understand market strategy itself a bit closer. I define market strategies as firms� strategies for creating customer value. According to the market orientation literature, the basis of achieving long-term high firm performance is to consistently provide customers with superior value to that of the competition. Thus, firms� market strategies are squarely at the center of their efforts to become more successful. To study these strategies and the effects they have, it is necessary to go beyond strategy documents and study the actual activities that firms perform to implement them. A market strategy, in my conceptualization, can thus be perceived as a coherent set of activities aimed at fulfilling certain goals, leading to the creation of customer value. These activities can then be further categorized according to the strategic orientations that drive the firm�s strategy-making, with customer orientation, competition orientation and innovation orientation being the orientations that have the most impact on market strategies. From this conceptual foundation, the dissertation takes four different approaches to investigating proactive market strategies, each presented in one of the four appended papers. In the first paper, a conceptual typology of different types of market strategies based on different value-creation logics � which are the combinations of responsiveness and proactivity that influence a firm�s value-creation efforts � is presented. In the second paper, the market strategies of five proactive firms are investigated to find three generic proactive market strategies, each representing a typical way for firms to employ proactivity in their market strategies. The third paper uses fuzzy-set qualitative comparative analysis to investigate the configurations of proactivity, market environment and different market strategies that consistently lead to high market-strategic effectiveness. Finally, the fourth paper goes more in-depth in exploring the activities that firms employ to create value for customers, with particular focus on the different activities that are performed during different stages of contact with a customer. Through this thorough investigation of proactive market strategies, this dissertation presents a holistic view of proactivity and its impact on firms� market strategies and their associated activities. As this is the first proper holistic view of proactivity in market strategy and also the first attempt to properly define proactivity in the market-strategic context, the dissertation also provides directions for future research. �Vi m�ste vara mer proaktiva� �r en fras som s�kerligen har dragits p� m�nga strategim�ten. I s�v�l internationaliserade j�ttar som lokala sm�f�retag, tj�nstef�retag likv�l som tillverkande industrier, har det i styrelserum, ledningsm�ten, pratats om behovet att vara mer proaktiv. Det uppenbara �r att proaktivitet ses som n�got positivt, n�got som kan hj�lpa f�retaget bli b�ttre, mer konkurrenskraftigt, och s� vidare. Men vad menar man egentligen med att vara proaktiv i det h�r sammanhanget? Och hur p�verkar det egentligen f�retags prestationsf�rm�ga? Harald Brege vid Link�pings Universitet har studerat proaktivitet och hur f�retag kan anv�nda det f�r att �ka effektiviteten p� sina marknadsstrategier, d.v.s. deras strategier f�r att skapa kundv�rde. Proaktivitet �r en nyckel som kan l�sa upp m�jligheter f�r f�retag att bli b�ttre p� att hantera en f�r�nderlig och komplex omv�rld och st�rka sin konkurrenskraft. Sl�r man upp ordet �proaktiv� i SAOL f�r man veta att det betyder f�rebyggande eller f�rutseende, men f�r att kunna anv�ndas som ett verktyg f�r strategiutveckling beh�vs en mer anv�ndbar definition �n s�. Ur ett strategiskt perspektiv s� har proaktivitet tre huvudsakliga komponenter: att vara l�ngsiktig, att ta initiativet och att driva f�r�ndring. Det viktigaste f�r ett proaktivt f�retag �r att inte vara passiva och v�nta p� att n�got h�nder som tvingar dem till f�r�ndring eller att bara reaktivt agera p� det som finns i omv�rlden. Ist�llet s� blickar man fram�t, identifierar de potentiella s�tt som en situation kan utvecklas p� och tar sedan initiativet och agerar f�r att f�r�ndra situationen s� att den passar f�retaget b�ttre. Dock s� r�cker det inte bara att bli proaktiv och s� f�r man stora vinster p� direkten. F�r att proaktiviteten ska bli framg�ngsrik s� m�ste ett f�retag dels arbeta f�r att skaffa en grundlig f�rst�else av sin omgivning, dels se till de olika delarna i deras marknadsstrategi h�nger ihop och arbetar mot samma m�l. �r strategin otydlig eller om f�retaget h�ller p� med saker de inte har insikt i s� �r proaktivitet ist�llet sannolikt att ge d�liga resultat. Genom att arbeta f�r att f�rst� sina kunder p� djupet s� kan proaktiva f�retag snabbt komma med l�sningar till behov, inklusive behov som kanske inte ens kunderna sj�lva hade identifierat. Genom att aktivt arbeta med att f�r�ndra kunders uppfattning av vad en leverant�r ska g�ra f�r dem och att p�verka politiker och andra intressenter s� kan proaktiva f�retag forma sina marknader f�r att b�ttre passa dem. Genom att driva produktutveckling som fokuserar p� morgondagens produkter och att testa nya m�jligheter, inte bara sm�f�rb�ttringar av samma gamla produkter, s� kan proaktiva f�retag skapa innovativa nya erbjudanden som v�nder upp och ner p� marknaden. Dessa tre exempel belyser de tre generiska proaktiva marknadsstrategier som har identifierats: kundengagemang, marknadsformande, och innovationsledarskap.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=cOf_DwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:28.539Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 64,
+  "fields": {
+    "title": "Origin and Branding in International Market Entry Processes",
+    "author": "Silva, Carlos Francisco e",
+    "description": "In today's globalized economy, selecting the right entry strategy is critical for companies looking to expand into foreign markets. This decision has a significant impact on a company's performance and its ability to collaborate with global supply chains. Moreover, with consumers becoming increasingly aware of the origins of products and brands, it is essential for companies to use the origin as a means to add value to their offerings. Edited by Dr. Carlos Silva, this book brings together global professionals and researchers who provide the latest empirical research findings and relevant theoretical frameworks on the subject, spanning multiple industries. Origin and Branding in International Market Entry Processes is targeted towards professionals and researchers working in the field of international management and business, providing insights and support for executives concerned with market entry, internationalization strategies, destination and origin branding, and brand expansion. The book covers a range of topics, including brand origin, country of brand origin, branding, market entry process, internationalization strategies, place branding, and digital places, among others. This book is an excellent resource for academics and professionals looking to understand the strategic role of brands and their origin in international market entry, helping readers make informed decisions on market entry strategies and branding that will ultimately improve their performance and success in global markets.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=j2nWEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:33:28.760Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 65,
+  "fields": {
+    "title": "Marketing Strategy and Plans",
+    "author": "David Johnston Luck, O. C. Ferrell",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=vjRN8PvEeEcC&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:33:28.975Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 66,
+  "fields": {
+    "title": "Using Semiotics in Marketing",
+    "author": "Rachel Lawes",
+    "description": "Semiotics is a superpower for marketers. It's a proven, powerful method of uncovering consumer insight, tailoring brand strategies that work and generating profit for brands. Companies such as Unilever and P&G have attested to the success of Lawes semiotics in stimulating innovation and boosting sales. Now newly updated, this second edition is packed with even more revelations about brands, consumers and their emerging needs. Three new chapters reveal the unseen social forces that drive the Be Kind movement, public appetite for sincerity and the emotions of younger generations. Using Semiotics in Marketing is an acclaimed how-to guide that makes semiotics accessible. It ensures all agency-side and client-side marketers can pick up the skills to use and apply semiotics to brands and is the only book on semiotics ever published that sets out a complete blueprint for research projects. This is your one-stop guide to learn how to write briefs and proposals, design projects, conduct analysis, write reports and present research findings. Start using semiotics today. Position and launch new brands, rejuvenate established ones, design products and packaging and inspire timely and provocative ad campaigns. See the future. Innovate.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=_5WvEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:33:29.191Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 67,
+  "fields": {
+    "title": "The Formula for Successful Marketing",
+    "author": "Ralph Mroz",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=zLOE2i1O8IMC&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 3,
+    "created_at": "2026-05-03T10:33:29.408Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 68,
+  "fields": {
+    "title": "A Hand-book of Agriculture",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=XT7glkZAutIC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:29.630Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 69,
+  "fields": {
+    "title": "The American Journal of Psychology",
+    "author": "Granville Stanley Hall, Edward Bradford Titchener, Karl M. Dallenbach, Madison Bentley, Edwin Garrigues Boring, Margaret Floy Washburn",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=FFM5AAAAMAAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:58.469Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 70,
+  "fields": {
+    "title": "The Psychology of the Negro",
+    "author": "George Oscar Ferguson",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=vA02R014QH8C&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:58.692Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 71,
+  "fields": {
+    "title": "History of the Problems of Philosophy: Introduction. pt. I. Psychology",
+    "author": "Paul Janet, Gabriel S�ailles",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=aOMuAQAAIAAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:58.905Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 72,
+  "fields": {
+    "title": "Education and Psychology Series",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=EIUuAAAAYAAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:59.123Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 73,
+  "fields": {
+    "title": "Studies in Abnormal Psychology",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=Le-WDLt_Kj8C&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:59.347Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 74,
+  "fields": {
+    "title": "The Psychological Review",
+    "author": "Unknown",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=NtJj0-V-DAMC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:59.569Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 75,
+  "fields": {
+    "title": "Handbook of Clinical Psychopharmacology for Psychologists",
+    "author": "Mark Muse, Bret A. Moore",
+    "description": "Praise for Handbook of Clinical Psychopharmacology for Psychologists \"Handbook of Clinical Psychopharmacology for Psychologists is a remarkably thorough introductory textbook for integrating psychotropic drug prescribing into psychological practices. It covers basic concepts in physiology, neurology, and pharmacology in easily understood language. Not only is this book a requirement for any psychologist seeking to gain prescriptive authority, but it is also helpful for any mental health clinician who collaborates with prescribers of any discipline. I recommend it highly.\" Daniel Carlat, MD, Editor in Chief of The Carlat Psychiatry Report \"An important resource for any psychologist who is preparing to become a prescribing psychologist or for any psychologist who wants to be informed about the practice of medical psychology.\" Joseph E. Comaty, PhD, MP, coauthor of A Primer of Drug Action \"Handbook of Clinical Psychopharmacology for Psychologists is an excellent treatise written by psychologists for psychologists.\" From the Foreword by Patrick H. DeLeon, PhD, and Jack G. Wiggins, PhD, former presidents of the American Psychological Association An essential and practical guide to integrating psychopharmacology into clinical practice Edited by medical psychologists with contributions by notable experts in their respective specialties, Handbook of Clinical Psychopharmacology for Psychologists covers key topics including: Ethics, standards of care, laws, and regulations relevant to clinical psychopharmacology Disorders of the nervous system, with particular relevance to psychopharmacology Use of comprehensive diagnostic strategies to establish differential diagnoses among possible medical and psychological symptoms Integration of pharmacotherapy with psychotherapy This essential book also provides an introduction to the qualifying exam for psychologists seeking specialty training in psychopharmacology, the Psychopharmacology Exam for Psychologists (PEP). The PEP-like practice test is available on the companion CD-ROM.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=qduozxFyCRAC&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:33:59.791Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 76,
+  "fields": {
+    "title": "Psychological Monographs",
+    "author": "Unknown",
+    "description": "Includes music.",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=M8NMAAAAYAAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:34:00.006Z"
+  }
+},
+{
+  "model": "products.book",
+  "pk": 77,
+  "fields": {
+    "title": "Elements of human psychology",
+    "author": "Howard Crosby Warren",
+    "description": "",
+    "image": "",
+    "image_url": "https://books.google.com/books/content?id=8ubFwaQ_48kC&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "price": "1000.00",
+    "stock": 10,
+    "category": 2,
+    "created_at": "2026-05-03T10:34:00.227Z"
+  }
+}
+]

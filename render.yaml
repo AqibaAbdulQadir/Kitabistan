@@ -2,61 +2,53 @@ services:
   - type: web
     name: kitabistan-cart
     rootDir: cart-service
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python manage.py makemigrations cart && python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT
+    runtime: docker
     envVars:
       - key: DATABASE_PATH
-        value: /var/data/cart.db
+        value: /app/db/cart.db
     disk:
       name: cart-data
-      mountPath: /var/data
+      mountPath: /app/db
       sizeGB: 1
 
   - type: web
     name: kitabistan-product
     rootDir: product-service
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python manage.py makemigrations products && python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT
+    runtime: docker
     envVars:
       - key: DATABASE_PATH
-        value: /var/data/product.db
+        value: /app/db/product.db
     disk:
       name: product-data
-      mountPath: /var/data
+      mountPath: /app/db
       sizeGB: 1
 
   - type: web
     name: kitabistan-order
     rootDir: order-service
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python manage.py makemigrations orders && python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT
+    runtime: docker
     envVars:
       - key: DATABASE_PATH
-        value: /var/data/order.db
+        value: /app/db/order.db
       - key: PRODUCT_SERVICE_URL
         value: https://kitabistan-product.onrender.com
     disk:
       name: order-data
-      mountPath: /var/data
+      mountPath: /app/db
       sizeGB: 1
 
   - type: web
     name: kitabistan-payment
     rootDir: payment-service
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python manage.py makemigrations payments && python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT
+    runtime: docker
     envVars:
       - key: DATABASE_PATH
-        value: /var/data/payment.db
+        value: /app/db/payment.db
       - key: ORDER_SERVICE_URL
         value: https://kitabistan-order.onrender.com
       - key: PRODUCT_SERVICE_URL
         value: https://kitabistan-product.onrender.com
     disk:
       name: payment-data
-      mountPath: /var/data
+      mountPath: /app/db
       sizeGB: 1

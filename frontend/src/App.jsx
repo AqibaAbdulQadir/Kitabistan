@@ -15,13 +15,23 @@ export default function App() {
   const FALLBACK_BACKEND = 'https://kitabistan.up.railway.app/api/health/';
 
   useEffect(() => {
-    // Check primary backend, fallback to Railway if Render is down
-    fetch(PRIMARY_BACKEND)
-      .catch(() => {
-        // Primary down — switch API base URL to fallback
-        localStorage.setItem('api_url', "https://kitabistan.up.railway.app/api");
-        window.location.reload();
-      });
+    const alreadyChecked = sessionStorage.getItem('failover_checked');
+
+    if (!alreadyChecked) {
+      fetch(PRIMARY_BACKEND)
+        .then(res => {
+          if (!res.ok) throw new Error();
+          // Render is up — use it
+          localStorage.removeItem('api_url');
+        })
+        .catch(() => {
+          // Render down — switch to Railway
+          localStorage.setItem('api_url', 'https://kitabistan.up.railway.app/api');
+        })
+        .finally(() => {
+          sessionStorage.setItem('failover_checked', 'true');
+        });
+    }
   }, []);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);

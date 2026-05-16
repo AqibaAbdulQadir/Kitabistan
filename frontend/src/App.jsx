@@ -12,7 +12,19 @@ import NotFoundPage from './pages/NotFoundPage';
 
 import { useEffect } from 'react';
 
-function App() {
+export default function App() {
+  const PRIMARY_BACKEND = 'https://kitabistan.onrender.com/api/health/';
+  const FALLBACK_BACKEND = 'https://kitabistan.up.railway.app/api/health/';
+
+  useEffect(() => {
+    // Check primary backend, fallback to Railway if Render is down
+    fetch(PRIMARY_BACKEND)
+      .catch(() => {
+        // Primary down — switch API base URL to fallback
+        localStorage.setItem('api_url', FALLBACK_BACKEND);
+        window.location.reload();
+      });
+  }, []);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');

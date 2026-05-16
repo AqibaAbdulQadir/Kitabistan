@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-baseURL: import.meta.env.VITE_API_URL,
+    baseURL: localStorage.getItem('api_url') || 'https://kitabistan.up.railway.app/api',
 });
 
 // Attach JWT token to every request

@@ -32,17 +32,10 @@ export default function App() {
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
-    const checkAuth = () => {
-      setIsLoggedIn(!!localStorage.getItem('access_token'));
-      setUserName(localStorage.getItem('user_name') || '');
-    };
-
-    window.addEventListener('storage', checkAuth);
-    window.addEventListener('auth-changed', checkAuth);
-    return () => {
-      window.removeEventListener('storage', checkAuth);
-      window.removeEventListener('auth-changed', checkAuth);
-    };
+    const token = localStorage.getItem('access_token');
+    const name = localStorage.getItem('user_name');
+    setIsLoggedIn(!!token);
+    setUserName(name || '');
   }, []);
 
   const handleLogout = () => {
@@ -87,5 +80,4 @@ export default function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
-  );
-}
+  );}

@@ -10,8 +10,6 @@ import ResetPasswordPage from './pages/ResetPasswordPage';
 import BookDetailPage from './pages/BookDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 
-import { useEffect } from 'react';
-
 export default function App() {
   const PRIMARY_BACKEND = 'https://kitabistan.onrender.com/api/health/';
   const FALLBACK_BACKEND = 'https://kitabistan.up.railway.app/api/health/';

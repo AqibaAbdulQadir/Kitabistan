@@ -39,7 +39,7 @@ export default function LoginPage() {
             localStorage.setItem('user_id', res.data.user?.id);
             localStorage.setItem('user_name', res.data.user?.email);
             window.dispatchEvent(new Event('auth-changed')); // ← Add this
-            navigate('/');
+            window.location.href = '/';
         } catch (err) {
             // setError('Google login failed. Check backend configuration.');
             setError(JSON.stringify(err.response.data));
@@ -55,7 +55,7 @@ export default function LoginPage() {
             localStorage.setItem('user_id', res.data.user.id);
             localStorage.setItem('user_name', res.data.user.name);
             window.dispatchEvent(new Event('auth-changed'));
-            navigate('/');
+            window.location.href = '/';
         } catch (err) {
             setError('Invalid email or password');
         }

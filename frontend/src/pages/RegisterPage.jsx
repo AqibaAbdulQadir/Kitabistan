@@ -18,7 +18,7 @@ export default function RegisterPage() {
             localStorage.setItem('user_id', res.data.user.id);
             localStorage.setItem('user_name', res.data.user.name);
             window.dispatchEvent(new Event('auth-changed'));
-            navigate('/');
+            window.location.href = '/';
         } catch (err) {
             setError('Registration failed. Email may already exist.');
         }

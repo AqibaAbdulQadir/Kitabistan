@@ -19,7 +19,7 @@ export default function App() {
     fetch(PRIMARY_BACKEND)
       .catch(() => {
         // Primary down — switch API base URL to fallback
-        localStorage.setItem('api_url', FALLBACK_BACKEND);
+        localStorage.setItem('api_url', "https://kitabistan.up.railway.app/api");
         window.location.reload();
       });
   }, []);

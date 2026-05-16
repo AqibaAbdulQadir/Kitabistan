@@ -4,6 +4,22 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import requests
 import os
+import time
+from collections import defaultdict
+
+# Store request timestamps per IP
+rate_store = defaultdict(list)
+
+def is_rate_limited(ip, limit=100, window=60):
+    """Return True if IP has exceeded limit in the time window"""
+    now = time.time()
+    # Remove old entries
+    rate_store[ip] = [t for t in rate_store[ip] if t > now - window]
+    # Check limit
+    if len(rate_store[ip]) >= limit: return True
+    # Record this request
+    rate_store[ip].append(now)
+    return False
 
 @method_decorator(csrf_exempt, name='dispatch')
 class GatewayView(View):
@@ -26,9 +42,12 @@ class GatewayView(View):
         return self._cors(HttpResponse('OK'))
 
     def _forward(self, request, service_name):
+
         if service_name not in self.SERVICE_URLS:
             return self._cors(JsonResponse({'error': 'Service not found'}, status=404))
-
+        client_ip = request.META.get('REMOTE_ADDR', 'unknown')
+        if is_rate_limited(client_ip):
+            return JsonResponse({'error': 'Rate limit exceeded'}, status=429)
         base_url = self.SERVICE_URLS[service_name]
         path = request.path
         query = request.META.get('QUERY_STRING', '')

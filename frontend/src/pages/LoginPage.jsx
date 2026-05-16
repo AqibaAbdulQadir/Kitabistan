@@ -38,6 +38,7 @@ export default function LoginPage() {
             localStorage.setItem('refresh_token', res.data.refresh);
             localStorage.setItem('user_id', res.data.user?.id);
             localStorage.setItem('user_name', res.data.user?.email);
+            window.dispatchEvent(new Event('auth-changed')); // ← Add this
             navigate('/');
         } catch (err) {
             // setError('Google login failed. Check backend configuration.');

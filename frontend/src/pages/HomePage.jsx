@@ -16,8 +16,8 @@ export default function HomePage() {
     const [addedBooks, setAddedBooks] = useState(new Set());
     const debounceRef = useRef(null);
     const navigate = useNavigate();
-    const isLoggedIn = localStorage.getItem('access_token');
-    const userName = localStorage.getItem('user_name');
+    const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('access_token'));
+    const [userName, setUserName] = useState(localStorage.getItem('user_name') || '');
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const pageSize = 12;

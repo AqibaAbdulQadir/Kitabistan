@@ -10,23 +10,9 @@ import ResetPasswordPage from './pages/ResetPasswordPage';
 import BookDetailPage from './pages/BookDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 
-export default function App() {
-  const PRIMARY = 'https://kitabistan.netlify.app';
-  const FALLBACK = 'https://kitabistan-g8eo.vercel.app';
-  const BACKEND = 'https://kitabistan.up.railway.app/api/health/';
+import { useEffect } from 'react';
 
-  // Auto failover check
-  useEffect(() => {
-    if (window.location.hostname.includes('netlify')) {
-      fetch(BACKEND)
-        .then(res => {
-          if (!res.ok) window.location.href = FALLBACK;
-        })
-        .catch(() => {
-          window.location.href = FALLBACK;
-        });
-    }
-  }, []);
+function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
@@ -80,4 +66,5 @@ export default function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
-  );}
+  );
+}

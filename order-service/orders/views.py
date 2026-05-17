@@ -7,6 +7,10 @@ from .serializers import (
 )
 import os
 import requests
+from .circuit_breaker import CircuitBreaker
+from .backoff import call_with_backoff
+
+product_cb = CircuitBreaker('product-service', failure_threshold=3, recovery_timeout=60)
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
@@ -43,7 +47,19 @@ class OrderViewSet(viewsets.ModelViewSet):
             quantity = item['quantity']
 
             try:
-                resp = requests.get(f'{product_service_url}/api/books/{product_id}/')
+                # Use circuit breaker + exponential backoff
+                resp = product_cb.call(
+                    lambda pid=product_id: call_with_backoff(
+                        lambda: requests.get(
+                            f'{product_service_url}/api/books/{pid}/',
+                            timeout=10
+                        ),
+                        max_retries=3,
+                        base_delay=1,
+                        max_delay=10
+                    )
+                )
+                
                 if resp.status_code != 200:
                     return Response(
                         {'error': f'Product {product_id} not found'},
@@ -56,6 +72,16 @@ class OrderViewSet(viewsets.ModelViewSet):
                         {'error': f'Insufficient stock for "{book["title"]}". Available: {book["stock"]}, Requested: {quantity}'},
                         status=status.HTTP_400_BAD_REQUEST
                     )
+
+            except Exception as e:
+                return Response(
+                    {
+                        'error': f'Product Service unavailable: {str(e)}',
+                        'circuit_status': product_cb.get_status()
+                    },
+                    status=status.HTTP_503_SERVICE_UNAVAILABLE
+                )
+                
 
             except requests.exceptions.ConnectionError:
                 return Response(
@@ -172,3 +198,9 @@ class OrderViewSet(viewsets.ModelViewSet):
         order.save()
 
         return Response(OrderSerializer(order).data)
+    
+    @action(detail=False, methods=['get'])
+    def circuit_status(self, request):
+        return Response({
+            'product_service': product_cb.get_status(),
+        })

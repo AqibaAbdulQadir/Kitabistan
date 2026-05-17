@@ -58,7 +58,11 @@ class PaymentViewSet(viewsets.ModelViewSet):
                 )
             )
         except Exception:
-            pass
+            return Response({
+                'error': 'Failed to confirm order',
+                'detail': str(e),
+                'circuit_status': order_cb.get_status()
+            }, status=status.HTTP_503_SERVICE_UNAVAILABLE)
 
         # Reduce stock with circuit breaker + backoff
         try:
@@ -78,8 +82,10 @@ class PaymentViewSet(viewsets.ModelViewSet):
                             max_retries=3, base_delay=1
                         )
                     )
-        except Exception:
-            pass
+        except Exception as e:
+
+            print(f"Stock update failed: {e}", flush=True)
+            # Don't fail the payment — stock can be fixed later
 
         return Response(PaymentSerializer(transaction).data, status=status.HTTP_201_CREATED)
 

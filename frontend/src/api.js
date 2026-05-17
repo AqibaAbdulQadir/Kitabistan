@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
     // baseURL: localStorage.getItem('api_url') || 'https://kitabistan.up.railway.app/api',
-    baseURL: import.meta.env.VITE_API_URL
+    baseURL: localStorage.getItem('api_url') || import.meta.env.VITE_API_URL
 });
 
 

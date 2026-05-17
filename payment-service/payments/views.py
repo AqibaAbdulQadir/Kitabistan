@@ -57,7 +57,7 @@ class PaymentViewSet(viewsets.ModelViewSet):
                     max_retries=3, base_delay=1
                 )
             )
-        except Exception:
+        except Exception as e:
             return Response({
                 'error': 'Failed to confirm order',
                 'detail': str(e),
@@ -83,7 +83,6 @@ class PaymentViewSet(viewsets.ModelViewSet):
                         )
                     )
         except Exception as e:
-
             print(f"Stock update failed: {e}", flush=True)
             # Don't fail the payment — stock can be fixed later
 

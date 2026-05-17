@@ -19,9 +19,6 @@ class PaymentViewSet(viewsets.ModelViewSet):
     queryset = PaymentTransaction.objects.all()
     serializer_class = PaymentSerializer
 
-    # ──────────────────────────────────────────────
-    # POST /api/payments/process/
-    # ─────────────────────────────────────────────-
     @action(detail=False, methods=['post'])
     def process_payment(self, request):
         serializer = ProcessPaymentSerializer(data=request.data)
@@ -33,19 +30,10 @@ class PaymentViewSet(viewsets.ModelViewSet):
         amount = serializer.validated_data['amount']
         payment_method = serializer.validated_data.get('payment_method', 'credit_card')
 
-        # Create transaction
-        transaction = PaymentTransaction.objects.create(
-            order_id=order_id,
-            user_id=user_id,
-            amount=amount,
-            payment_method=payment_method,
-            status='completed'
-        )
-
         order_service_url = os.environ.get('ORDER_SERVICE_URL', 'http://order-service:8003')
         product_service_url = os.environ.get('PRODUCT_SERVICE_URL', 'http://product-service:8004')
 
-        # Update order status with circuit breaker + backoff
+        # Step 1: Update order status FIRST
         try:
             order_cb.call(
                 lambda: call_with_backoff(
@@ -64,7 +52,16 @@ class PaymentViewSet(viewsets.ModelViewSet):
                 'circuit_status': order_cb.get_status()
             }, status=status.HTTP_503_SERVICE_UNAVAILABLE)
 
-        # Reduce stock with circuit breaker + backoff
+        # Step 2: Only create transaction AFTER order is confirmed
+        transaction = PaymentTransaction.objects.create(
+            order_id=order_id,
+            user_id=user_id,
+            amount=amount,
+            payment_method=payment_method,
+            status='completed'
+        )
+
+        # Step 3: Reduce stock (best effort)
         try:
             order_resp = requests.get(f'{order_service_url}/api/orders/{order_id}/', timeout=10)
             if order_resp.status_code == 200:
@@ -84,29 +81,18 @@ class PaymentViewSet(viewsets.ModelViewSet):
                     )
         except Exception as e:
             print(f"Stock update failed: {e}", flush=True)
-            # Don't fail the payment — stock can be fixed later
 
         return Response(PaymentSerializer(transaction).data, status=status.HTTP_201_CREATED)
 
-    # ──────────────────────────────────────────────
-    # GET /api/payments/order/{order_id}/
-    # ──────────────────────────────────────────────
     @action(detail=False, methods=['get'])
     def by_order(self, request):
         order_id = request.query_params.get('order_id')
         if not order_id:
-            return Response(
-                {'error': 'order_id is required'},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
+            return Response({'error': 'order_id is required'}, status=status.HTTP_400_BAD_REQUEST)
         payments = PaymentTransaction.objects.filter(order_id=order_id)
         serializer = self.get_serializer(payments, many=True)
         return Response(serializer.data)
 
-    # ──────────────────────────────────────────────
-    # GET /api/payments/health/
-    # ──────────────────────────────────────────────
     @action(detail=False, methods=['get'])
     def health(self, request):
         return Response({'service': 'payment-service', 'status': 'healthy'})

@@ -23,13 +23,13 @@ export default function App() {
           if (!res.ok) throw new Error();
           // Render is up — use it
           localStorage.removeItem('api_url');
+          sessionStorage.setItem('failover_checked', 'true');
         })
         .catch(() => {
           // Render down — switch to Railway
           localStorage.setItem('api_url', 'https://kitabistan.up.railway.app/api');
-        })
-        .finally(() => {
           sessionStorage.setItem('failover_checked', 'true');
+          window.location.reload();
         });
     }
   }, []);

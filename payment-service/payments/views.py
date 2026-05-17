@@ -7,6 +7,12 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from .models import PaymentTransaction
 from .serializers import PaymentSerializer, ProcessPaymentSerializer
+from .circuit_breaker import CircuitBreaker
+from .backoff import call_with_backoff
+
+# Circuit breakers for external calls
+order_cb = CircuitBreaker('order-service', failure_threshold=3, recovery_timeout=60)
+product_cb = CircuitBreaker('product-service', failure_threshold=3, recovery_timeout=60)
 
 
 class PaymentViewSet(viewsets.ModelViewSet):
@@ -16,7 +22,6 @@ class PaymentViewSet(viewsets.ModelViewSet):
     # ──────────────────────────────────────────────
     # POST /api/payments/process/
     # ─────────────────────────────────────────────-
-
     @action(detail=False, methods=['post'])
     def process_payment(self, request):
         serializer = ProcessPaymentSerializer(data=request.data)
@@ -37,18 +42,47 @@ class PaymentViewSet(viewsets.ModelViewSet):
             status='completed'
         )
 
-        # Update order status to confirmed
         order_service_url = os.environ.get('ORDER_SERVICE_URL', 'http://order-service:8003')
-        
+        product_service_url = os.environ.get('PRODUCT_SERVICE_URL', 'http://product-service:8004')
+
+        # Update order status with circuit breaker + backoff
         try:
-            requests.patch(
-                f'{order_service_url}/api/orders/{order_id}/update_status/',
-                json={'order_status': 'confirmed'}
+            order_cb.call(
+                lambda: call_with_backoff(
+                    lambda: requests.patch(
+                        f'{order_service_url}/api/orders/{order_id}/update_status/',
+                        json={'order_status': 'confirmed'},
+                        timeout=10
+                    ),
+                    max_retries=3, base_delay=1
+                )
             )
         except Exception:
             pass
 
+        # Reduce stock with circuit breaker + backoff
+        try:
+            order_resp = requests.get(f'{order_service_url}/api/orders/{order_id}/', timeout=10)
+            if order_resp.status_code == 200:
+                order = order_resp.json()
+                for item in order.get('items', []):
+                    pid = item['product_id']
+                    qty = item['quantity']
+                    product_cb.call(
+                        lambda pid=pid, qty=qty: call_with_backoff(
+                            lambda: requests.patch(
+                                f'{product_service_url}/api/books/{pid}/update_stock/',
+                                json={'quantity': qty},
+                                timeout=10
+                            ),
+                            max_retries=3, base_delay=1
+                        )
+                    )
+        except Exception:
+            pass
+
         return Response(PaymentSerializer(transaction).data, status=status.HTTP_201_CREATED)
+
     # ──────────────────────────────────────────────
     # GET /api/payments/order/{order_id}/
     # ──────────────────────────────────────────────
@@ -71,3 +105,10 @@ class PaymentViewSet(viewsets.ModelViewSet):
     @action(detail=False, methods=['get'])
     def health(self, request):
         return Response({'service': 'payment-service', 'status': 'healthy'})
+    
+    @action(detail=False, methods=['get'])
+    def circuit_status(self, request):
+        return Response({
+            'order_service': order_cb.get_status(),
+            'product_service': product_cb.get_status(),
+        })

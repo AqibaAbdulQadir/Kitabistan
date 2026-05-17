@@ -39,7 +39,6 @@ class PaymentViewSet(viewsets.ModelViewSet):
 
         # Update order status to confirmed
         order_service_url = os.environ.get('ORDER_SERVICE_URL', 'http://order-service:8003')
-        product_service_url = os.environ.get('PRODUCT_SERVICE_URL', 'http://product-service:8004')
         
         try:
             requests.patch(

@@ -64,15 +64,15 @@ class GatewayView(View):
         try:
             method = request.method.lower()
             if method == 'get':
-                resp = requests.get(url, headers=headers, timeout=10)
+                resp = requests.get(url, headers=headers, timeout=60)
             elif method == 'post':
-                resp = requests.post(url, data=request.body, headers=headers, timeout=10)
+                resp = requests.post(url, data=request.body, headers=headers, timeout=60)
             elif method == 'put':
-                resp = requests.put(url, data=request.body, headers=headers, timeout=10)
+                resp = requests.put(url, data=request.body, headers=headers, timeout=60)
             elif method == 'patch':
-                resp = requests.patch(url, data=request.body, headers=headers, timeout=10)
+                resp = requests.patch(url, data=request.body, headers=headers, timeout=60)
             elif method == 'delete':
-                resp = requests.delete(url, headers=headers, timeout=10)
+                resp = requests.delete(url, headers=headers, timeout=60)
             else:
                 return self._cors(JsonResponse({'error': 'Method not allowed'}, status=405))
 
